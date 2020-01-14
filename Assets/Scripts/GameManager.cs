@@ -9,10 +9,6 @@ public class GameManager : MonoBehaviour
 
     public AudioSource theMusic;
 
-    public bool startPlaying;
-
-    public BeatScroller theBS;
-
     public static GameManager instance;
 
     public int currentScore;
@@ -45,16 +41,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!startPlaying)
-        {
-            if (Input.anyKeyDown)
-            {
-                startPlaying = true;
-                theBS.hasStarted = true;
 
-                theMusic.Play();
-            }
-        }
     }
 
     public void NoteHit()
@@ -91,4 +78,5 @@ public class GameManager : MonoBehaviour
 
         missedHits++;
     }
+
 }

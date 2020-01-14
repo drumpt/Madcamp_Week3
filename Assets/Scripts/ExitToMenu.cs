@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class ExitToMenu : MonoBehaviour
 {
     private RectTransform rectTransform;
+    public GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,7 @@ public class ExitToMenu : MonoBehaviour
 
     public void ChangeSceneMenu()
     {
+        gameManager.theMusic.Stop();
         SceneManager.LoadScene("Scenes/StartMenu");
     }
 }

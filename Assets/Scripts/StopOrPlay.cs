@@ -16,6 +16,8 @@ public class StopOrPlay : MonoBehaviour
 
     public ExitToMenu exitToMenu;
 
+    public GameManager gameManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +40,8 @@ public class StopOrPlay : MonoBehaviour
             phoneCamera.PauseFrontCam();
             beatScroller.StopScroll();
             exitToMenu.ExitActive();
+            gameManager.theMusic.Pause();
+
         }
         else if(image.sprite.name == play.name)
         {
@@ -47,6 +51,8 @@ public class StopOrPlay : MonoBehaviour
             phoneCamera.PlayFrontCam();
             beatScroller.PlayScroll();
             exitToMenu.ExitInactive();
+            gameManager.theMusic.Play();
+
         }
     }
 }
