@@ -1,5 +1,4 @@
-﻿
-using System.Net;
+﻿using System.Net;
 using System.Net.Sockets;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,8 +21,6 @@ public class PhoneCamera : MonoBehaviour
     VideoCapture video;
     Mat frame;
     CascadeClassifier faceDetector;*/
-
-
 
     // Start is called before the first frame update
     void Start()

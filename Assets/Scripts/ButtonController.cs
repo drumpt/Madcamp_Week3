@@ -5,9 +5,9 @@ using UnityEngine;
 public class ButtonController : MonoBehaviour
 {
 
-     private SpriteRenderer theSR;
-     public Sprite defaultImage;
-     public Sprite pressedImage;
+    private SpriteRenderer theSR;
+    public Sprite defaultImage;
+    public Sprite pressedImage;
 
     public KeyCode keyToPress;
 
