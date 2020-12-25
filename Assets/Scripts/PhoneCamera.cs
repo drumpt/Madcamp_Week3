@@ -1,9 +1,14 @@
-﻿using System.Net;
-using System.Net.Sockets;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using System;
 using System.Text;
+using OpenCVForUnity;
+using OpenCVForUnity.CoreModule;
+using OpenCVForUnity.ObjdetectModule;
+using OpenCVForUnity.ImgprocModule;
+using OpenCVForUnity.UnityUtils;
+// using System.Net;
+// using System.Net.Sockets;
 
 public class PhoneCamera : MonoBehaviour
 {
@@ -15,28 +20,27 @@ public class PhoneCamera : MonoBehaviour
     public RawImage background;
     public AspectRatioFitter fit;
 
-    //for opencv
-    /*Socket sock;
-    byte[] receiverBuff;
-    VideoCapture video;
+    private int inputSize = 48;
+    private string cascadeClassifierPath = @"Assets/Resources/haarcascade_frontalface_default.xml";
+
     Mat frame;
-    CascadeClassifier faceDetector;*/
+    CascadeClassifier faceDetector;
+
+    // Socket sock;
+    // byte[] receiverBuff;
+    // VideoCapture video;
 
     // Start is called before the first frame update
     void Start()
-    {/*
-        //for opencv
-        faceDetector = new CascadeClassifier();
-        faceDetector.Load(@"C:/Users/q/Downloads/haarcascade_frontalface_alt.xml");
+    {
+        faceDetector = new CascadeClassifier(cascadeClassifierPath);
 
-        StartSocketConnection();
-*/
-        //
+        // StartSocketConnection();
 
         defaultBackground = background.texture;
         WebCamDevice[] devices = WebCamTexture.devices;
         
-        //must have least one camera
+        // need to have have least one camera
         if(devices.Length == 0)
         {
             Debug.Log("No Camera detected");
@@ -46,19 +50,20 @@ public class PhoneCamera : MonoBehaviour
 
         for(int i = 0; i < devices.Length; i++)
         {
-            if (devices[i].isFrontFacing)
+            if(devices[i].isFrontFacing)
             {
                 frontCam = new WebCamTexture(devices[i].name, Screen.width, Screen.height);
             }
         }
 
-        //must have least one front camera
+        // need to have least one front camera
         if(frontCam == null)
         {
             Debug.Log("Unable to find front camera");
             return;
         }
 
+        frontCam.requestedFPS = 60;
         frontCam.Play();
         background.texture = frontCam;
 
@@ -68,58 +73,61 @@ public class PhoneCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!camAvailable)
+        if(!camAvailable)
             return;
+
         float ratio = (float)frontCam.width / (float)frontCam.height;
-       fit.aspectRatio = ratio;
+        fit.aspectRatio = ratio;
 
         float scaleY = frontCam.videoVerticallyMirrored ? -1f : 1f;
         background.rectTransform.localScale = new Vector3(1f, scaleY, 1f);
-
         int orient = -frontCam.videoRotationAngle;
         background.rectTransform.localEulerAngles = new Vector3(0, 0, orient);
-
-        /*//for opencv
+        
         Texture2D texture = new Texture2D(frontCam.width, frontCam.height, TextureFormat.RGBA32, false);
-        frame = new Mat(texture.height, texture.width, MatType.CV_8UC4);
-        texture2DToMat(frame, texture);
-        OpenCvSharp.Rect[] faces = faceDetector.DetectMultiScale(frame);
+        Color[] textureData = frontCam.GetPixels();
+        texture.SetPixels(textureData);
 
-        if (faces.Length >= 1) // 얼굴이 존재하는 경우
+        frame = new Mat(texture.height, texture.width, CvType.CV_8UC4);
+        Utils.texture2DToMat(texture, frame);
+        MatOfRect matOfRectFaces = new MatOfRect();
+        faceDetector.detectMultiScale(frame, matOfRectFaces);
+        OpenCVForUnity.CoreModule.Rect[] faces = matOfRectFaces.toArray();
+
+        if(faces.Length >= 1) // there exist some faces
         {
-            OpenCvSharp.Rect face = faces[0];
+            OpenCVForUnity.CoreModule.Rect face = faces[0];
 
-            // find the largest face in the frame
+            // find largest face in the frame
             for (int i = 0; i < faces.Length; i++)
             {
-                if (faces[i].Width * faces[i].Height > face.Width * face.Height) face = faces[i];
+                if(faces[i].width * faces[i].height > face.width * face.height) face = faces[i];
             }
-            //Console.Out.WriteLine(faces[0]);
 
-            // For predicting facial expression (48 x 48 gray 사진들에 대해서 학습을 진행했기 때문에 48 x 48 grayscale의 사진으로 변환시킴
             Mat resizedGrayFace = new Mat();
-            Cv2.CvtColor(new Mat(frame, face), resizedGrayFace, ColorConversionCodes.BGR2GRAY);
-            Cv2.CvtColor(resizedGrayFace, resizedGrayFace, ColorConversionCodes.GRAY2BGR);
-            Cv2.Resize(resizedGrayFace, resizedGrayFace, new Size(48, 48), 0, 0, InterpolationFlags.Area);
+            Imgproc.cvtColor(new Mat(frame, face), resizedGrayFace, Imgproc.COLOR_BGR2GRAY);
+            Imgproc.cvtColor(resizedGrayFace, resizedGrayFace, Imgproc.COLOR_GRAY2BGR);
+            Imgproc.resize(resizedGrayFace, resizedGrayFace, new Size(inputSize, inputSize), 0, 0, Imgproc.INTER_AREA); // resize to 48 x 48
 
-            byte[] buff = resizedGrayFace.ToBytes();
-            ////Console.Out.WriteLine(resizedGrayFace.ToBytes().Length);
-            sock.Send(buff, SocketFlags.None);
-            int n = sock.Receive(receiverBuff);
-            string emotion = Encoding.UTF8.GetString(receiverBuff, 0, n);
-            Console.Out.WriteLine(emotion);
+            // byte[] buff = resizedGrayFace.ToBytes();
+            // ////Console.Out.WriteLine(resizedGrayFace.ToBytes().Length);
+            // sock.Send(buff, SocketFlags.None);
+            // int n = sock.Receive(receiverBuff);
+            // string emotion = Encoding.UTF8.GetString(receiverBuff, 0, n);
+            string emotion = "happy";
 
-            switch (emotion)
-            {
-                case "angry":
-                    Input.
+            Debug.Log(emotion);
+            // Console.Out.WriteLine(emotion);
 
-            }
-        }*/
+            // switch(emotion)
+            // {
+            //     case "angry":
+            //         Input.
 
+            // }
+        }
     }
 
-    //To Stop frontCam
     public void PauseFrontCam()
     {
         frontCam.Pause();
@@ -129,7 +137,6 @@ public class PhoneCamera : MonoBehaviour
         frontCam.Play();
     }
 
-    //for opencv
     // start socket connection
     /*private void StartSocketConnection()
     {

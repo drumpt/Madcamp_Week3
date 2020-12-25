@@ -21,7 +21,6 @@ public class StartToPlay : MonoBehaviour
 
     public void ChangeScenePlay()
     {
-
         SceneManager.LoadScene("Scenes/PlayGame");
         Debug.Log("startbutton is clicked");
     }

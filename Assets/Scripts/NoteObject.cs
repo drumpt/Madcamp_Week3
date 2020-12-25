@@ -19,9 +19,9 @@ public class NoteObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(keyToPress))
+        if(Input.GetKey(keyToPress))
         {
-            if (canBePressed)
+            if(canBePressed)
             {
                 gameObject.SetActive(false);
                 GameManager.instance.NoteHit();
@@ -41,7 +41,7 @@ public class NoteObject : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.tag == "Activator")
+        if(other.tag == "Activator")
         {
             canBePressed = false;
 

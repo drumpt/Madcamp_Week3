@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-
     public AudioSource theMusic;
 
     public static GameManager instance;
@@ -25,8 +24,6 @@ public class GameManager : MonoBehaviour
     public float perfetHits;
     public float missedHits;
    
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -52,7 +49,7 @@ public class GameManager : MonoBehaviour
         {
             multiplierTracker++;
 
-            if (multiplierThresholds[currentMultiplier - 1] <= multiplierTracker)
+            if(multiplierThresholds[currentMultiplier - 1] <= multiplierTracker)
             {
                 multiplierTracker = 0;
                 currentMultiplier++;
