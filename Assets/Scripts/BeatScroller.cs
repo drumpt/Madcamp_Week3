@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class BeatScroller : MonoBehaviour
 {
-    // Start is called before the first frame update
-
     public float beatTempo;
-
     public bool hasStarted;
- 
     
+    // Start is called before the first frame update
     void Start()
     {
         beatTempo = beatTempo / 60f;

@@ -7,6 +7,7 @@ public class NoteObject : MonoBehaviour
     public bool canBePressed;
 
     public KeyCode keyToPress;
+    // public bool virtualPress;
 
     public GameObject perfectEffect, missEffect;
 
@@ -19,7 +20,7 @@ public class NoteObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(keyToPress))
+        if(InputBroker.GetKey(keyToPress))
         {
             if(canBePressed)
             {

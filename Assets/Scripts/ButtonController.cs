@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class ButtonController : MonoBehaviour
 {
-
     private SpriteRenderer theSR;
     public Sprite defaultImage;
     public Sprite pressedImage;
-
     public KeyCode keyToPress;
+    // public bool virtualPress;
 
     // Start is called before the first frame update
     void Start()
@@ -20,15 +19,24 @@ public class ButtonController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Debug.Log(Input.GetKeyDown(keyToPress));
-
-        if(Input.GetKeyDown(keyToPress)){
+        if(InputBroker.GetKeyDown(keyToPress))
+        {
+            // pressed = true;
             theSR.sprite = pressedImage;
         }
 
-        if(Input.GetKeyUp(keyToPress))
+        if(InputBroker.GetKeyUp(keyToPress))
         {
+            // pressed = false;
             theSR.sprite = defaultImage;
         }
+        // if(pressed)
+        // {
+        //     theSR.sprite = pressedImage;
+        // }
+        // else
+        // {
+        //     theSR.sprite = defaultImage;
+        // }
     }
 }

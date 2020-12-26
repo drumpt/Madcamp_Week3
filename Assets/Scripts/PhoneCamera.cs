@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System;
 using System.Text;
+using System.Collections.Generic;
 using OpenCVForUnity;
 using OpenCVForUnity.CoreModule;
 using OpenCVForUnity.ObjdetectModule;
@@ -12,7 +13,6 @@ using OpenCVForUnity.UnityUtils;
 
 public class PhoneCamera : MonoBehaviour
 {
-
     private bool camAvailable;
     private WebCamTexture frontCam;
     private Texture defaultBackground;
@@ -26,17 +26,13 @@ public class PhoneCamera : MonoBehaviour
     Mat frame;
     CascadeClassifier faceDetector;
 
-    // Socket sock;
-    // byte[] receiverBuff;
-    // VideoCapture video;
+    string[] emotions = {"happy", "angry", "sad", "surprise", "neutral"};
+    string emotion;
+    System.Random rand = new System.Random();
 
     // Start is called before the first frame update
     void Start()
     {
-        faceDetector = new CascadeClassifier(cascadeClassifierPath);
-
-        // StartSocketConnection();
-
         defaultBackground = background.texture;
         WebCamDevice[] devices = WebCamTexture.devices;
         
@@ -56,18 +52,19 @@ public class PhoneCamera : MonoBehaviour
             }
         }
 
-        // need to have least one front camera
         if(frontCam == null)
         {
             Debug.Log("Unable to find front camera");
             return;
         }
 
+        camAvailable = true;
+
         frontCam.requestedFPS = 60;
         frontCam.Play();
         background.texture = frontCam;
 
-        camAvailable = true;
+        faceDetector = new CascadeClassifier(cascadeClassifierPath);
     }
 
     // Update is called once per frame
@@ -101,30 +98,52 @@ public class PhoneCamera : MonoBehaviour
             // find largest face in the frame
             for (int i = 0; i < faces.Length; i++)
             {
-                if(faces[i].width * faces[i].height > face.width * face.height) face = faces[i];
+                if(faces[i].width * faces[i].height > face.width * face.height)
+                {
+                    face = faces[i];
+                }
             }
 
             Mat resizedGrayFace = new Mat();
             Imgproc.cvtColor(new Mat(frame, face), resizedGrayFace, Imgproc.COLOR_BGR2GRAY);
             Imgproc.cvtColor(resizedGrayFace, resizedGrayFace, Imgproc.COLOR_GRAY2BGR);
-            Imgproc.resize(resizedGrayFace, resizedGrayFace, new Size(inputSize, inputSize), 0, 0, Imgproc.INTER_AREA); // resize to 48 x 48
+            Imgproc.resize(resizedGrayFace, resizedGrayFace, new Size(inputSize, inputSize), 0, 0, Imgproc.INTER_AREA);
 
-            // byte[] buff = resizedGrayFace.ToBytes();
-            // ////Console.Out.WriteLine(resizedGrayFace.ToBytes().Length);
-            // sock.Send(buff, SocketFlags.None);
-            // int n = sock.Receive(receiverBuff);
-            // string emotion = Encoding.UTF8.GetString(receiverBuff, 0, n);
-            string emotion = "happy";
+            int index = rand.Next(emotions.Length);
+            emotion = emotions[index];
 
-            Debug.Log(emotion);
-            // Console.Out.WriteLine(emotion);
-
-            // switch(emotion)
-            // {
-            //     case "angry":
-            //         Input.
-
+            switch(emotion)
+            {
+                case "happy":
+                    InputBroker.forcedKeyDowns = new List<string> {KeyCode.LeftArrow.ToString()};
+                    InputBroker.forcedKeyUps = new List<string> {KeyCode.UpArrow.ToString(), KeyCode.DownArrow.ToString(), KeyCode.RightArrow.ToString()};
+                    InputBroker.forcedKey = new List<string> {KeyCode.LeftArrow.ToString()};
+                    break;
+                case "angry":
+                    InputBroker.forcedKeyDowns = new List<string> {KeyCode.UpArrow.ToString()};
+                    InputBroker.forcedKeyUps = new List<string> {KeyCode.LeftArrow.ToString(), KeyCode.DownArrow.ToString(), KeyCode.RightArrow.ToString()};
+                    InputBroker.forcedKey = new List<string> {KeyCode.UpArrow.ToString()};
+                    break;
+                case "sad":
+                    InputBroker.forcedKeyDowns = new List<string> {KeyCode.DownArrow.ToString()};
+                    InputBroker.forcedKeyUps = new List<string> {KeyCode.LeftArrow.ToString(), KeyCode.UpArrow.ToString(), KeyCode.RightArrow.ToString()};
+                    InputBroker.forcedKey = new List<string> {KeyCode.DownArrow.ToString()};
+                    break;
+                case "surprise":
+                    InputBroker.forcedKeyDowns = new List<string> {KeyCode.RightArrow.ToString()};
+                    InputBroker.forcedKeyUps = new List<string> {KeyCode.LeftArrow.ToString(), KeyCode.UpArrow.ToString(), KeyCode.DownArrow.ToString()};
+                    InputBroker.forcedKey = new List<string> {KeyCode.RightArrow.ToString()};
+                    break;
+                default: // neutral
+                    InputBroker.forcedKeyDowns = new List<string> {};
+                    InputBroker.forcedKeyUps = new List<string> {KeyCode.LeftArrow.ToString(), KeyCode.UpArrow.ToString(), KeyCode.DownArrow.ToString(), KeyCode.RightArrow.ToString()};
+                    InputBroker.forcedKey = new List<string> {};
+                    break;
+            }
+            // foreach(var key in InputBroker.forcedKeyUps) { // LeftArrow, UpArrow, DownArrow, RightArrow
+            //     Debug.Log(key);
             // }
+
         }
     }
 
@@ -136,14 +155,4 @@ public class PhoneCamera : MonoBehaviour
     {
         frontCam.Play();
     }
-
-    // start socket connection
-    /*private void StartSocketConnection()
-    {
-        sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-        var ep = new IPEndPoint(IPAddress.Parse("192.168.0.93"), 8080); // 방화벽을 해제해야 할 수도 있음
-        sock.Connect(ep);
-        receiverBuff = new byte[1024];
-    }*/
-
 }

@@ -2281,6 +2281,8 @@ MonoBehaviour:
   defaultImage: {fileID: 21300000, guid: ed2984e24d5df6f46a80ead6ad2964fa, type: 3}
   pressedImage: {fileID: 21300000, guid: 8f47ff751b3bdec48862adf0100c74fa, type: 3}
   keyToPress: 276
+  pressed: 0
+  notPressed: 0
 --- !u!50 &232958868
 Rigidbody2D:
   serializedVersion: 4
@@ -6364,7 +6366,7 @@ GameObject:
   - component: {fileID: 861469977}
   - component: {fileID: 861469978}
   m_Layer: 0
-  m_Name: texts
+  m_Name: Texts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6730,6 +6732,8 @@ MonoBehaviour:
   defaultImage: {fileID: 21300000, guid: ad187f74f2d0cc4499f39a0267b9eda8, type: 3}
   pressedImage: {fileID: 21300000, guid: 18bf226de2d59284e904c26430f659c9, type: 3}
   keyToPress: 274
+  pressed: 0
+  notPressed: 0
 --- !u!50 &972624829
 Rigidbody2D:
   serializedVersion: 4
@@ -9264,6 +9268,8 @@ MonoBehaviour:
   defaultImage: {fileID: 21300000, guid: c3c13b1f8baa5dd4a86d3dc186668178, type: 3}
   pressedImage: {fileID: 21300000, guid: 2d10ec486261df445b73774ff82f1b69, type: 3}
   keyToPress: 275
+  pressed: 0
+  notPressed: 0
 --- !u!50 &1467308282
 Rigidbody2D:
   serializedVersion: 4
@@ -10712,6 +10718,8 @@ MonoBehaviour:
   defaultImage: {fileID: 21300000, guid: 1bbda9210988dfd4db252a09838d254f, type: 3}
   pressedImage: {fileID: 21300000, guid: cacc39dd2a4e88a43aadeddd73e9b1e2, type: 3}
   keyToPress: 273
+  pressed: 0
+  notPressed: 0
 --- !u!50 &1740362390
 Rigidbody2D:
   serializedVersion: 4
