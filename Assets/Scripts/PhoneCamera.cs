@@ -8,27 +8,28 @@ using OpenCVForUnity.CoreModule;
 using OpenCVForUnity.ObjdetectModule;
 using OpenCVForUnity.ImgprocModule;
 using OpenCVForUnity.UnityUtils;
-// using System.Net;
-// using System.Net.Sockets;
+using Unity.Barracuda;
 
 public class PhoneCamera : MonoBehaviour
 {
     private bool camAvailable;
     private WebCamTexture frontCam;
     private Texture defaultBackground;
-
     public RawImage background;
     public AspectRatioFitter fit;
 
-    private int inputSize = 48;
-    private string cascadeClassifierPath = @"Assets/Resources/haarcascade_frontalface_default.xml";
-
     Mat frame;
     CascadeClassifier faceDetector;
+    private string cascadeClassifierPath = @"Assets/Resources/haarcascade_frontalface_default.xml";
+    private string modelSourcePath = "facial_expression_classification_model";
+    private int inputSize = 48;
 
-    string[] emotions = {"happy", "angry", "sad", "surprise", "neutral"};
+    Dictionary<int, string> indexToEmotions = new Dictionary<int, string>() {{0, "angry"},  {1, "happy"}, {2, "neutral"}, {3, "sad"}, {4, "surprise"}};
     string emotion;
-    System.Random rand = new System.Random();
+
+    private Model model;
+    private IWorker worker;
+    private Tensor output = null;
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +44,6 @@ public class PhoneCamera : MonoBehaviour
             camAvailable = false;
             return;
         }
-
         for(int i = 0; i < devices.Length; i++)
         {
             if(devices[i].isFrontFacing)
@@ -51,7 +51,6 @@ public class PhoneCamera : MonoBehaviour
                 frontCam = new WebCamTexture(devices[i].name, Screen.width, Screen.height);
             }
         }
-
         if(frontCam == null)
         {
             Debug.Log("Unable to find front camera");
@@ -59,12 +58,12 @@ public class PhoneCamera : MonoBehaviour
         }
 
         camAvailable = true;
-
         frontCam.requestedFPS = 60;
         frontCam.Play();
         background.texture = frontCam;
 
         faceDetector = new CascadeClassifier(cascadeClassifierPath);
+        model = ModelLoader.Load((NNModel)Resources.Load(modelSourcePath));
     }
 
     // Update is called once per frame
@@ -96,7 +95,7 @@ public class PhoneCamera : MonoBehaviour
             OpenCVForUnity.CoreModule.Rect face = faces[0];
 
             // find largest face in the frame
-            for (int i = 0; i < faces.Length; i++)
+            for(int i = 0; i < faces.Length; i++)
             {
                 if(faces[i].width * faces[i].height > face.width * face.height)
                 {
@@ -106,12 +105,15 @@ public class PhoneCamera : MonoBehaviour
 
             Mat resizedGrayFace = new Mat();
             Imgproc.cvtColor(new Mat(frame, face), resizedGrayFace, Imgproc.COLOR_BGR2GRAY);
-            Imgproc.cvtColor(resizedGrayFace, resizedGrayFace, Imgproc.COLOR_GRAY2BGR);
             Imgproc.resize(resizedGrayFace, resizedGrayFace, new Size(inputSize, inputSize), 0, 0, Imgproc.INTER_AREA);
+            Texture2D resizedGrayFaceTexture = new Texture2D(inputSize, inputSize, TextureFormat.RGB24, false);
+            Utils.matToTexture2D(resizedGrayFace, resizedGrayFaceTexture);
 
-            int index = rand.Next(emotions.Length);
-            emotion = emotions[index];
-
+            Tensor tensor = new Tensor(resizedGrayFaceTexture);
+            worker = WorkerFactory.CreateWorker(WorkerFactory.Type.CSharp, model); // synchronized execution with CPU usage
+            output = worker.Execute(tensor).PeekOutput();
+            int index = output.ArgMax()[0];
+            emotion = indexToEmotions[index];
             switch(emotion)
             {
                 case "happy":
@@ -140,10 +142,11 @@ public class PhoneCamera : MonoBehaviour
                     InputBroker.forcedKey = new List<string> {};
                     break;
             }
+            output.Dispose();
+            worker.Dispose();
             // foreach(var key in InputBroker.forcedKeyUps) { // LeftArrow, UpArrow, DownArrow, RightArrow
             //     Debug.Log(key);
             // }
-
         }
     }
 

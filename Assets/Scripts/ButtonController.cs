@@ -8,7 +8,6 @@ public class ButtonController : MonoBehaviour
     public Sprite defaultImage;
     public Sprite pressedImage;
     public KeyCode keyToPress;
-    // public bool virtualPress;
 
     // Start is called before the first frame update
     void Start()
@@ -30,13 +29,5 @@ public class ButtonController : MonoBehaviour
             // pressed = false;
             theSR.sprite = defaultImage;
         }
-        // if(pressed)
-        // {
-        //     theSR.sprite = pressedImage;
-        // }
-        // else
-        // {
-        //     theSR.sprite = defaultImage;
-        // }
     }
 }
