@@ -729,7 +729,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Combo
+  m_text: 'Multiplier: x1'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -764,7 +764,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_textAlignment: 514
+  m_textAlignment: 513
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -774,7 +774,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -798,10 +798,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 64608763}
-    characterCount: 5
+    characterCount: 14
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -892,8 +892,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -7.98, y: 1.78}
-  m_SizeDelta: {x: 2.5, y: 1}
+  m_AnchoredPosition: {x: -7.85, y: 1.25}
+  m_SizeDelta: {x: 4, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &65360658
 GameObject:
@@ -2281,8 +2281,6 @@ MonoBehaviour:
   defaultImage: {fileID: 21300000, guid: ed2984e24d5df6f46a80ead6ad2964fa, type: 3}
   pressedImage: {fileID: 21300000, guid: 8f47ff751b3bdec48862adf0100c74fa, type: 3}
   keyToPress: 276
-  pressed: 0
-  notPressed: 0
 --- !u!50 &232958868
 Rigidbody2D:
   serializedVersion: 4
@@ -6732,8 +6730,6 @@ MonoBehaviour:
   defaultImage: {fileID: 21300000, guid: ad187f74f2d0cc4499f39a0267b9eda8, type: 3}
   pressedImage: {fileID: 21300000, guid: 18bf226de2d59284e904c26430f659c9, type: 3}
   keyToPress: 274
-  pressed: 0
-  notPressed: 0
 --- !u!50 &972624829
 Rigidbody2D:
   serializedVersion: 4
@@ -8222,7 +8218,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 99.7, y: 151.2}
+  m_AnchoredPosition: {x: -95, y: 150}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1282863288
@@ -9268,8 +9264,6 @@ MonoBehaviour:
   defaultImage: {fileID: 21300000, guid: c3c13b1f8baa5dd4a86d3dc186668178, type: 3}
   pressedImage: {fileID: 21300000, guid: 2d10ec486261df445b73774ff82f1b69, type: 3}
   keyToPress: 275
-  pressed: 0
-  notPressed: 0
 --- !u!50 &1467308282
 Rigidbody2D:
   serializedVersion: 4
@@ -10378,7 +10372,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 99, y: 187}
+  m_AnchoredPosition: {x: -95, y: 190}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1686035861
@@ -10718,8 +10712,6 @@ MonoBehaviour:
   defaultImage: {fileID: 21300000, guid: 1bbda9210988dfd4db252a09838d254f, type: 3}
   pressedImage: {fileID: 21300000, guid: cacc39dd2a4e88a43aadeddd73e9b1e2, type: 3}
   keyToPress: 273
-  pressed: 0
-  notPressed: 0
 --- !u!50 &1740362390
 Rigidbody2D:
   serializedVersion: 4
@@ -11154,8 +11146,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.608, y: 1.788}
-  m_SizeDelta: {x: 2.5, y: 1}
+  m_AnchoredPosition: {x: -7.85, y: 1.85}
+  m_SizeDelta: {x: 4, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1855022665
 CanvasRenderer:
@@ -11231,7 +11223,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'score: 0'
+  m_text: 'Score: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11266,7 +11258,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_textAlignment: 514
+  m_textAlignment: 513
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -11276,7 +11268,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0

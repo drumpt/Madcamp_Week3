@@ -21,7 +21,7 @@ public class PhoneCamera : MonoBehaviour
     Mat frame;
     CascadeClassifier faceDetector;
     private string cascadeClassifierPath = @"Assets/Resources/haarcascade_frontalface_default.xml";
-    private string modelSourcePath = "facial_expression_classification_model";
+    private string modelSourcePath = "new_model";
     private int inputSize = 48;
 
     Dictionary<int, string> indexToEmotions = new Dictionary<int, string>() {{0, "angry"},  {1, "happy"}, {2, "neutral"}, {3, "sad"}, {4, "surprise"}};
@@ -64,6 +64,7 @@ public class PhoneCamera : MonoBehaviour
 
         faceDetector = new CascadeClassifier(cascadeClassifierPath);
         model = ModelLoader.Load((NNModel)Resources.Load(modelSourcePath));
+        worker = WorkerFactory.CreateWorker(WorkerFactory.Type.CSharp, model); // synchronized execution with CPU usage
     }
 
     // Update is called once per frame
@@ -87,7 +88,9 @@ public class PhoneCamera : MonoBehaviour
         frame = new Mat(texture.height, texture.width, CvType.CV_8UC4);
         Utils.texture2DToMat(texture, frame);
         MatOfRect matOfRectFaces = new MatOfRect();
+        if (frame == null) return;
         faceDetector.detectMultiScale(frame, matOfRectFaces);
+
         OpenCVForUnity.CoreModule.Rect[] faces = matOfRectFaces.toArray();
 
         if(faces.Length >= 1) // there exist some faces
@@ -110,7 +113,7 @@ public class PhoneCamera : MonoBehaviour
             Utils.matToTexture2D(resizedGrayFace, resizedGrayFaceTexture);
 
             Tensor tensor = new Tensor(resizedGrayFaceTexture);
-            worker = WorkerFactory.CreateWorker(WorkerFactory.Type.CSharp, model); // synchronized execution with CPU usage
+            if (worker == null) return;
             output = worker.Execute(tensor).PeekOutput();
             int index = output.ArgMax()[0];
             emotion = indexToEmotions[index];
@@ -143,11 +146,13 @@ public class PhoneCamera : MonoBehaviour
                     break;
             }
             output.Dispose();
-            worker.Dispose();
-            // foreach(var key in InputBroker.forcedKeyUps) { // LeftArrow, UpArrow, DownArrow, RightArrow
-            //     Debug.Log(key);
-            // }
         }
+    }
+
+    public void OnDisable()
+    {
+        output.Dispose();
+        worker.Dispose();
     }
 
     public void PauseFrontCam()
