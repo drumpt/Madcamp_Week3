@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 12745164}
   m_Layer: 0
   m_Name: Left Arrow (52)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -252,7 +252,7 @@ GameObject:
   - component: {fileID: 23115571}
   m_Layer: 0
   m_Name: Left Arrow (51)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -369,7 +369,7 @@ GameObject:
   - component: {fileID: 29807259}
   m_Layer: 0
   m_Name: Left Arrow (66)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -486,7 +486,7 @@ GameObject:
   - component: {fileID: 38613977}
   m_Layer: 0
   m_Name: Left Arrow (77)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -909,7 +909,7 @@ GameObject:
   - component: {fileID: 65360660}
   m_Layer: 0
   m_Name: Left Arrow (14)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1026,7 +1026,7 @@ GameObject:
   - component: {fileID: 75381144}
   m_Layer: 0
   m_Name: Left Arrow (69)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1143,7 +1143,7 @@ GameObject:
   - component: {fileID: 86910613}
   m_Layer: 0
   m_Name: Left Arrow (89)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1260,7 +1260,7 @@ GameObject:
   - component: {fileID: 106805480}
   m_Layer: 0
   m_Name: Left Arrow (72)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1377,7 +1377,7 @@ GameObject:
   - component: {fileID: 108215564}
   m_Layer: 0
   m_Name: Left Arrow (75)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1494,7 +1494,7 @@ GameObject:
   - component: {fileID: 138808672}
   m_Layer: 0
   m_Name: Left Arrow (4)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1541,7 +1541,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1611,7 +1611,7 @@ GameObject:
   - component: {fileID: 161745618}
   m_Layer: 0
   m_Name: Left Arrow (26)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1728,7 +1728,7 @@ GameObject:
   - component: {fileID: 173421136}
   m_Layer: 0
   m_Name: Left Arrow (69)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1845,7 +1845,7 @@ GameObject:
   - component: {fileID: 180822623}
   m_Layer: 0
   m_Name: Left Arrow (16)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1962,7 +1962,7 @@ GameObject:
   - component: {fileID: 205477917}
   m_Layer: 0
   m_Name: Left Arrow (25)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2079,7 +2079,7 @@ GameObject:
   - component: {fileID: 216706135}
   m_Layer: 0
   m_Name: Left Arrow (19)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2342,7 +2342,7 @@ GameObject:
   - component: {fileID: 241575014}
   m_Layer: 0
   m_Name: Left Arrow (63)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2459,7 +2459,7 @@ GameObject:
   - component: {fileID: 244362995}
   m_Layer: 0
   m_Name: Left Arrow (17)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2576,7 +2576,7 @@ GameObject:
   - component: {fileID: 266321066}
   m_Layer: 0
   m_Name: Left Arrow (80)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2693,7 +2693,7 @@ GameObject:
   - component: {fileID: 331663904}
   m_Layer: 0
   m_Name: Left Arrow (62)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2810,7 +2810,7 @@ GameObject:
   - component: {fileID: 339159261}
   m_Layer: 0
   m_Name: Left Arrow (18)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2927,7 +2927,7 @@ GameObject:
   - component: {fileID: 347701205}
   m_Layer: 0
   m_Name: Left Arrow (53)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3044,7 +3044,7 @@ GameObject:
   - component: {fileID: 352538201}
   m_Layer: 0
   m_Name: Left Arrow (58)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3161,7 +3161,7 @@ GameObject:
   - component: {fileID: 361284905}
   m_Layer: 0
   m_Name: Left Arrow (41)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3278,7 +3278,7 @@ GameObject:
   - component: {fileID: 372533899}
   m_Layer: 0
   m_Name: Left Arrow (2)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3325,7 +3325,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -3395,7 +3395,7 @@ GameObject:
   - component: {fileID: 374263364}
   m_Layer: 0
   m_Name: Left Arrow (54)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3512,7 +3512,7 @@ GameObject:
   - component: {fileID: 408978172}
   m_Layer: 0
   m_Name: Left Arrow (50)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3629,7 +3629,7 @@ GameObject:
   - component: {fileID: 422511339}
   m_Layer: 0
   m_Name: Left Arrow (56)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3746,7 +3746,7 @@ GameObject:
   - component: {fileID: 438429532}
   m_Layer: 0
   m_Name: Left Arrow (12)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3863,7 +3863,7 @@ GameObject:
   - component: {fileID: 448369719}
   m_Layer: 0
   m_Name: Left Arrow (23)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3980,7 +3980,7 @@ GameObject:
   - component: {fileID: 462764853}
   m_Layer: 0
   m_Name: Left Arrow (32)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4097,7 +4097,7 @@ GameObject:
   - component: {fileID: 471622511}
   m_Layer: 0
   m_Name: Left Arrow (42)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4214,7 +4214,7 @@ GameObject:
   - component: {fileID: 516716719}
   m_Layer: 0
   m_Name: Left Arrow (81)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4429,7 +4429,7 @@ GameObject:
   - component: {fileID: 520142907}
   m_Layer: 0
   m_Name: Left Arrow (90)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4546,7 +4546,7 @@ GameObject:
   - component: {fileID: 551951207}
   m_Layer: 0
   m_Name: Left Arrow (94)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4663,7 +4663,7 @@ GameObject:
   - component: {fileID: 566515740}
   m_Layer: 0
   m_Name: Left Arrow (9)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4846,7 +4846,7 @@ GameObject:
   - component: {fileID: 624635115}
   m_Layer: 0
   m_Name: Left Arrow (68)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4963,7 +4963,7 @@ GameObject:
   - component: {fileID: 638515473}
   m_Layer: 0
   m_Name: Left Arrow (86)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5080,7 +5080,7 @@ GameObject:
   - component: {fileID: 641653652}
   m_Layer: 0
   m_Name: Left Arrow (21)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5197,7 +5197,7 @@ GameObject:
   - component: {fileID: 645282854}
   m_Layer: 0
   m_Name: Left Arrow (83)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5314,7 +5314,7 @@ GameObject:
   - component: {fileID: 667635749}
   m_Layer: 0
   m_Name: Left Arrow (85)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5431,7 +5431,7 @@ GameObject:
   - component: {fileID: 685844288}
   m_Layer: 0
   m_Name: Left Arrow (28)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5548,7 +5548,7 @@ GameObject:
   - component: {fileID: 694973403}
   m_Layer: 0
   m_Name: Left Arrow (64)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5665,7 +5665,7 @@ GameObject:
   - component: {fileID: 753023071}
   m_Layer: 0
   m_Name: Left Arrow (15)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5782,7 +5782,7 @@ GameObject:
   - component: {fileID: 802616759}
   m_Layer: 0
   m_Name: Left Arrow (45)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5899,7 +5899,7 @@ GameObject:
   - component: {fileID: 809466730}
   m_Layer: 0
   m_Name: Left Arrow (59)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6016,7 +6016,7 @@ GameObject:
   - component: {fileID: 824359818}
   m_Layer: 0
   m_Name: Left Arrow (29)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6133,7 +6133,7 @@ GameObject:
   - component: {fileID: 854747205}
   m_Layer: 0
   m_Name: Left Arrow (43)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6250,7 +6250,7 @@ GameObject:
   - component: {fileID: 856241130}
   m_Layer: 0
   m_Name: Left Arrow (36)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6411,7 +6411,7 @@ GameObject:
   - component: {fileID: 890572784}
   m_Layer: 0
   m_Name: Left Arrow (3)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6528,7 +6528,7 @@ GameObject:
   - component: {fileID: 898323055}
   m_Layer: 0
   m_Name: Left Arrow (35)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6791,7 +6791,7 @@ GameObject:
   - component: {fileID: 976848389}
   m_Layer: 0
   m_Name: Left Arrow (10)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6908,7 +6908,7 @@ GameObject:
   - component: {fileID: 987132001}
   m_Layer: 0
   m_Name: Left Arrow (44)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7025,7 +7025,7 @@ GameObject:
   - component: {fileID: 1007898442}
   m_Layer: 0
   m_Name: Left Arrow (71)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7142,7 +7142,7 @@ GameObject:
   - component: {fileID: 1127007655}
   m_Layer: 0
   m_Name: Left Arrow (46)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7259,7 +7259,7 @@ GameObject:
   - component: {fileID: 1136083627}
   m_Layer: 0
   m_Name: Left Arrow (78)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7376,7 +7376,7 @@ GameObject:
   - component: {fileID: 1149860971}
   m_Layer: 0
   m_Name: Left Arrow (47)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7493,7 +7493,7 @@ GameObject:
   - component: {fileID: 1150709108}
   m_Layer: 0
   m_Name: Left Arrow (67)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7610,7 +7610,7 @@ GameObject:
   - component: {fileID: 1176090092}
   m_Layer: 0
   m_Name: Left Arrow (39)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7727,7 +7727,7 @@ GameObject:
   - component: {fileID: 1194367016}
   m_Layer: 0
   m_Name: Left Arrow (1)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7774,7 +7774,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -7844,7 +7844,7 @@ GameObject:
   - component: {fileID: 1216621257}
   m_Layer: 0
   m_Name: Left Arrow (91)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7961,7 +7961,7 @@ GameObject:
   - component: {fileID: 1217236095}
   m_Layer: 0
   m_Name: Left Arrow (40)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8078,7 +8078,7 @@ GameObject:
   - component: {fileID: 1219618093}
   m_Layer: 0
   m_Name: Left Arrow (88)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8350,7 +8350,7 @@ GameObject:
   - component: {fileID: 1309244169}
   m_Layer: 0
   m_Name: Left Arrow (55)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8594,7 +8594,7 @@ GameObject:
   - component: {fileID: 1387121738}
   m_Layer: 0
   m_Name: Left Arrow (20)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8711,7 +8711,7 @@ GameObject:
   - component: {fileID: 1418222729}
   m_Layer: 0
   m_Name: Left Arrow (65)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8828,7 +8828,7 @@ GameObject:
   - component: {fileID: 1437039448}
   m_Layer: 0
   m_Name: Left Arrow (61)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8945,7 +8945,7 @@ GameObject:
   - component: {fileID: 1441018782}
   m_Layer: 0
   m_Name: Left Arrow (74)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9062,7 +9062,7 @@ GameObject:
   - component: {fileID: 1465269633}
   m_Layer: 0
   m_Name: Left Arrow (37)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9325,7 +9325,7 @@ GameObject:
   - component: {fileID: 1486186510}
   m_Layer: 0
   m_Name: Left Arrow (24)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9442,7 +9442,7 @@ GameObject:
   - component: {fileID: 1493662544}
   m_Layer: 0
   m_Name: Left Arrow (5)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9559,7 +9559,7 @@ GameObject:
   - component: {fileID: 1555341288}
   m_Layer: 0
   m_Name: Left Arrow (30)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9694,13 +9694,13 @@ MonoBehaviour:
   theMusic: {fileID: 1370754705}
   currentScore: 0
   scorePerNote: 100
-  scoreText: {fileID: 1855022668}
-  multiText: {fileID: 64608763}
   currentMultiplier: 0
   multiplierTracker: 0
   multiplierThresholds: 040000000400000004000000
+  scoreText: {fileID: 1855022668}
+  multiText: {fileID: 64608763}
   totalNotes: 0
-  perfetHits: 0
+  perfectHits: 0
   missedHits: 0
 --- !u!4 &1580948248
 Transform:
@@ -9730,7 +9730,7 @@ GameObject:
   - component: {fileID: 1620065734}
   m_Layer: 0
   m_Name: Left Arrow (11)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9847,7 +9847,7 @@ GameObject:
   - component: {fileID: 1646862120}
   m_Layer: 0
   m_Name: Left Arrow (6)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9964,7 +9964,7 @@ GameObject:
   - component: {fileID: 1653851978}
   m_Layer: 0
   m_Name: Left Arrow (31)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10232,7 +10232,7 @@ GameObject:
   - component: {fileID: 1679049776}
   m_Layer: 0
   m_Name: Left Arrow (0)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10510,7 +10510,7 @@ GameObject:
   - component: {fileID: 1710129760}
   m_Layer: 0
   m_Name: Left Arrow (38)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10773,7 +10773,7 @@ GameObject:
   - component: {fileID: 1750789328}
   m_Layer: 0
   m_Name: Left Arrow (34)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10890,7 +10890,7 @@ GameObject:
   - component: {fileID: 1770031097}
   m_Layer: 0
   m_Name: Left Arrow (70)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11007,7 +11007,7 @@ GameObject:
   - component: {fileID: 1850599881}
   m_Layer: 0
   m_Name: Left Arrow (13)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11427,7 +11427,7 @@ GameObject:
   - component: {fileID: 1872742580}
   m_Layer: 0
   m_Name: Left Arrow (92)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11544,7 +11544,7 @@ GameObject:
   - component: {fileID: 1916823999}
   m_Layer: 0
   m_Name: Left Arrow (76)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11661,7 +11661,7 @@ GameObject:
   - component: {fileID: 1920101838}
   m_Layer: 0
   m_Name: Left Arrow (82)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11778,7 +11778,7 @@ GameObject:
   - component: {fileID: 1952223864}
   m_Layer: 0
   m_Name: Left Arrow (60)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11895,7 +11895,7 @@ GameObject:
   - component: {fileID: 1953999809}
   m_Layer: 0
   m_Name: Left Arrow (49)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12012,7 +12012,7 @@ GameObject:
   - component: {fileID: 1987066777}
   m_Layer: 0
   m_Name: Left Arrow (57)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12129,7 +12129,7 @@ GameObject:
   - component: {fileID: 1992735694}
   m_Layer: 0
   m_Name: Left Arrow (93)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12246,7 +12246,7 @@ GameObject:
   - component: {fileID: 2038258629}
   m_Layer: 0
   m_Name: Left Arrow (73)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12363,7 +12363,7 @@ GameObject:
   - component: {fileID: 2051633768}
   m_Layer: 0
   m_Name: Left Arrow (33)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12480,7 +12480,7 @@ GameObject:
   - component: {fileID: 2074708823}
   m_Layer: 0
   m_Name: Left Arrow (84)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12597,7 +12597,7 @@ GameObject:
   - component: {fileID: 2082780946}
   m_Layer: 0
   m_Name: Left Arrow (79)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12714,7 +12714,7 @@ GameObject:
   - component: {fileID: 2107587405}
   m_Layer: 0
   m_Name: Left Arrow (27)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12831,7 +12831,7 @@ GameObject:
   - component: {fileID: 2118472037}
   m_Layer: 0
   m_Name: Left Arrow (22)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12948,7 +12948,7 @@ GameObject:
   - component: {fileID: 2120979288}
   m_Layer: 0
   m_Name: Left Arrow (48)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13111,7 +13111,7 @@ GameObject:
   - component: {fileID: 2144852474}
   m_Layer: 0
   m_Name: Left Arrow (87)
-  m_TagString: Activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

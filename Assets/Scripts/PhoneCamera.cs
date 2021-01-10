@@ -21,7 +21,8 @@ public class PhoneCamera : MonoBehaviour
     Mat frame;
     CascadeClassifier faceDetector;
     private string cascadeClassifierPath = @"Assets/Resources/haarcascade_frontalface_default.xml";
-    private string modelSourcePath = "new_model";
+    // private string modelSourcePath = "facial_expression_model_sad_enhenced";
+    private string modelSourcePath = "facial_expression_model";
     private int inputSize = 48;
 
     Dictionary<int, string> indexToEmotions = new Dictionary<int, string>() {{0, "angry"},  {1, "happy"}, {2, "neutral"}, {3, "sad"}, {4, "surprise"}};
@@ -88,8 +89,14 @@ public class PhoneCamera : MonoBehaviour
         frame = new Mat(texture.height, texture.width, CvType.CV_8UC4);
         Utils.texture2DToMat(texture, frame);
         MatOfRect matOfRectFaces = new MatOfRect();
-        if (frame == null) return;
-        faceDetector.detectMultiScale(frame, matOfRectFaces);
+        try
+        {
+            faceDetector.detectMultiScale(frame, matOfRectFaces);            
+        }
+        catch
+        {
+
+        }
 
         OpenCVForUnity.CoreModule.Rect[] faces = matOfRectFaces.toArray();
 
@@ -110,6 +117,7 @@ public class PhoneCamera : MonoBehaviour
             Imgproc.cvtColor(new Mat(frame, face), resizedGrayFace, Imgproc.COLOR_BGR2GRAY);
             Imgproc.resize(resizedGrayFace, resizedGrayFace, new Size(inputSize, inputSize), 0, 0, Imgproc.INTER_AREA);
             Texture2D resizedGrayFaceTexture = new Texture2D(inputSize, inputSize, TextureFormat.RGB24, false);
+            // Texture2D resizedGrayFaceTexture = new Texture2D(inputSize, inputSize, TextureFormat.Alpha8, false);
             Utils.matToTexture2D(resizedGrayFace, resizedGrayFaceTexture);
 
             Tensor tensor = new Tensor(resizedGrayFaceTexture);
@@ -117,6 +125,7 @@ public class PhoneCamera : MonoBehaviour
             output = worker.Execute(tensor).PeekOutput();
             int index = output.ArgMax()[0];
             emotion = indexToEmotions[index];
+            // Debug.Log(emotion);
             switch(emotion)
             {
                 case "happy":
@@ -147,12 +156,6 @@ public class PhoneCamera : MonoBehaviour
             }
             output.Dispose();
         }
-    }
-
-    public void OnDisable()
-    {
-        output.Dispose();
-        worker.Dispose();
     }
 
     public void PauseFrontCam()

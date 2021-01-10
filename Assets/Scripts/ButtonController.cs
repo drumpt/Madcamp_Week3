@@ -20,13 +20,11 @@ public class ButtonController : MonoBehaviour
     {
         if(InputBroker.GetKeyDown(keyToPress))
         {
-            // pressed = true;
             theSR.sprite = pressedImage;
         }
 
         if(InputBroker.GetKeyUp(keyToPress))
         {
-            // pressed = false;
             theSR.sprite = defaultImage;
         }
     }

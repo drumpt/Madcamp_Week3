@@ -4,31 +4,23 @@ using UnityEngine;
 
 public class NoteObject : MonoBehaviour
 {
-    public bool canBePressed;
-
     public KeyCode keyToPress;
-    // public bool virtualPress;
-
     public GameObject perfectEffect, missEffect;
+
+    private bool canBePressed;
+    private bool alreadyPressed;
 
     // Start is called before the first frame update
     void Start()
     {
-        
-    } 
+        canBePressed = false;
+        alreadyPressed = false;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if(InputBroker.GetKey(keyToPress))
-        {
-            if(canBePressed)
-            {
-                gameObject.SetActive(false);
-                GameManager.instance.NoteHit();
-                Instantiate(perfectEffect, transform.position, perfectEffect.transform.rotation);
-            }
-        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -39,9 +31,20 @@ public class NoteObject : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if(canBePressed && InputBroker.GetKey(keyToPress))
+        {
+            alreadyPressed = true;
+            gameObject.SetActive(false);
+            GameManager.instance.NoteHit();
+            Instantiate(perfectEffect, transform.position, perfectEffect.transform.rotation);
+        }
+    }
+
     private void OnTriggerExit2D(Collider2D other)
     {
-        if(other.tag == "Activator")
+        if(other.tag == "Activator" && !alreadyPressed)
         {
             canBePressed = false;
             GameManager.instance.NoteMissed();

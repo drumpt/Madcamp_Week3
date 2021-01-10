@@ -34,9 +34,9 @@ public class StopOrPlay : MonoBehaviour
     {
         if(image.sprite.name == stop.name)
         {
-            //change button Image
+            // change button Image
             image.sprite = play;
-            //Stop scene
+            // Stop scene
             phoneCamera.PauseFrontCam();
             beatScroller.StopScroll();
             exitToMenu.ExitActive();
@@ -45,9 +45,9 @@ public class StopOrPlay : MonoBehaviour
         }
         else if(image.sprite.name == play.name)
         {
-            //change button Image
+            // change button Image
             image.sprite = stop;
-            //play scene
+            // play scene
             phoneCamera.PlayFrontCam();
             beatScroller.PlayScroll();
             exitToMenu.ExitInactive();
