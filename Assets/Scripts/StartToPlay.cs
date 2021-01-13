@@ -24,4 +24,21 @@ public class StartToPlay : MonoBehaviour
         SceneManager.LoadScene("Scenes/PlayGame");
         Debug.Log("startbutton is clicked");
     }
+
+    public void HowToPlay()
+    {
+        SceneManager.LoadScene("Scenes/HowToPlay");
+        Debug.Log("howtoplaybutton is clicked");
+    }
+
+    public void Quit()
+    {
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #else
+            Application.Quit();
+        #endif
+        // Application.Quit();
+        Debug.Log("quitbutton is clicked");
+    }
 }

@@ -18,10 +18,13 @@ public class PhoneCamera : MonoBehaviour
     public RawImage background;
     public AspectRatioFitter fit;
 
+    public const int FPS = 30;
+
     Mat frame;
     CascadeClassifier faceDetector;
     private string cascadeClassifierPath = @"Assets/Resources/haarcascade_frontalface_default.xml";
     private string modelSourcePath = "facial_expression_model_sad_neutral_enhenced"; // best model so far
+    // private string modelSourcePath = "facial_expression_model_lightweighted"; // best model so far
     // private string modelSourcePath = "facial_expression_model_sad_enhenced";
     private int inputSize = 48;
 
@@ -59,7 +62,7 @@ public class PhoneCamera : MonoBehaviour
         }
 
         camAvailable = true;
-        frontCam.requestedFPS = 60;
+        frontCam.requestedFPS = FPS;
         frontCam.Play();
         background.texture = frontCam;
 
@@ -84,14 +87,13 @@ public class PhoneCamera : MonoBehaviour
         Debug.Log("Start 2");
         Debug.Log(currentTime - previousTime);
 
-        worker = WorkerFactory.CreateWorker(WorkerFactory.Type.CSharp, model); // synchronized execution with CPU usage
+        worker = WorkerFactory.CreateWorker(WorkerFactory.Type.CSharpBurst, model); // synchronized execution with CPU usage
 
         now = DateTimeOffset.UtcNow;
         previousTime = currentTime;
         currentTime = now.ToUnixTimeMilliseconds();
         Debug.Log("Start 3");
         Debug.Log(currentTime - previousTime);
-
     }
 
     // Update is called once per frame
@@ -120,21 +122,14 @@ public class PhoneCamera : MonoBehaviour
         Debug.Log("Update 2");
         Debug.Log(currentTime - previousTime);
 
-        Texture2D texture = new Texture2D(frontCam.width, frontCam.height, TextureFormat.RGBA32, false);
-        Color[] textureData = frontCam.GetPixels();
-        texture.SetPixels(textureData);
-
-        frame = new Mat(texture.height, texture.width, CvType.CV_8UC4);
-        Utils.texture2DToMat(texture, frame);
+        frame = new Mat(frontCam.height, frontCam.width, CvType.CV_8UC4);
+        Utils.webCamTextureToMat(frontCam, frame);
         MatOfRect matOfRectFaces = new MatOfRect();
         try
         {
             faceDetector.detectMultiScale(frame, matOfRectFaces);            
         }
-        catch
-        {
-
-        }
+        catch {}
 
         now = DateTimeOffset.UtcNow;
         previousTime = currentTime;
@@ -171,8 +166,29 @@ public class PhoneCamera : MonoBehaviour
 
             Tensor tensor = new Tensor(resizedGrayFaceTexture);
             if (worker == null) return;
+
+            now = DateTimeOffset.UtcNow;
+            previousTime = currentTime;
+            currentTime = now.ToUnixTimeMilliseconds();
+            Debug.Log("Update 5-1");
+            Debug.Log(currentTime - previousTime);
+
             output = worker.Execute(tensor).PeekOutput();
+
+            now = DateTimeOffset.UtcNow;
+            previousTime = currentTime;
+            currentTime = now.ToUnixTimeMilliseconds();
+            Debug.Log("Update 5-2");
+            Debug.Log(currentTime - previousTime);
+
             int index = output.ArgMax()[0];
+
+            now = DateTimeOffset.UtcNow;
+            previousTime = currentTime;
+            currentTime = now.ToUnixTimeMilliseconds();
+            Debug.Log("Update 5-3");
+            Debug.Log(currentTime - previousTime);
+
             emotion = indexToEmotions[index];
             // Debug.Log(emotion);
             switch(emotion)

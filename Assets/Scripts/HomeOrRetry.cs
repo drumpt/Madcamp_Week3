@@ -22,15 +22,11 @@ public class HomeOrRetry : MonoBehaviour
 
     public void GoToStartMenu()
     {
-        Debug.Log("GoToStartMenu1");
         SceneManager.LoadScene("Scenes/StartMenu");
-        Debug.Log("GoToStartMenu2");
     }
 
     public void GoToPlayGame()
     {
-        Debug.Log("GoToPlayGame1");
         SceneManager.LoadScene("Scenes/PlayGame");
-        Debug.Log("GoToPlayGame2");
     }
 }
