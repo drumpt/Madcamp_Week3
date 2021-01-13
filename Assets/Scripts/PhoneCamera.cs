@@ -21,8 +21,8 @@ public class PhoneCamera : MonoBehaviour
     Mat frame;
     CascadeClassifier faceDetector;
     private string cascadeClassifierPath = @"Assets/Resources/haarcascade_frontalface_default.xml";
+    private string modelSourcePath = "facial_expression_model_sad_neutral_enhenced"; // best model so far
     // private string modelSourcePath = "facial_expression_model_sad_enhenced";
-    private string modelSourcePath = "facial_expression_model";
     private int inputSize = 48;
 
     Dictionary<int, string> indexToEmotions = new Dictionary<int, string>() {{0, "angry"},  {1, "happy"}, {2, "neutral"}, {3, "sad"}, {4, "surprise"}};
@@ -63,9 +63,35 @@ public class PhoneCamera : MonoBehaviour
         frontCam.Play();
         background.texture = frontCam;
 
+        DateTimeOffset now = DateTimeOffset.UtcNow;
+        long currentTime = now.ToUnixTimeMilliseconds();
+        long previousTime = 0;
+        // Debug.Log(currentTime);
+
         faceDetector = new CascadeClassifier(cascadeClassifierPath);
+
+        now = DateTimeOffset.UtcNow;
+        previousTime = currentTime;
+        currentTime = now.ToUnixTimeMilliseconds();
+        Debug.Log("Start 1");
+        Debug.Log(currentTime - previousTime);
+
         model = ModelLoader.Load((NNModel)Resources.Load(modelSourcePath));
+
+        now = DateTimeOffset.UtcNow;
+        previousTime = currentTime;
+        currentTime = now.ToUnixTimeMilliseconds();
+        Debug.Log("Start 2");
+        Debug.Log(currentTime - previousTime);
+
         worker = WorkerFactory.CreateWorker(WorkerFactory.Type.CSharp, model); // synchronized execution with CPU usage
+
+        now = DateTimeOffset.UtcNow;
+        previousTime = currentTime;
+        currentTime = now.ToUnixTimeMilliseconds();
+        Debug.Log("Start 3");
+        Debug.Log(currentTime - previousTime);
+
     }
 
     // Update is called once per frame
@@ -74,6 +100,12 @@ public class PhoneCamera : MonoBehaviour
         if(!camAvailable)
             return;
 
+        DateTimeOffset now = DateTimeOffset.UtcNow;
+        long previousTime = 0;
+        long currentTime = now.ToUnixTimeMilliseconds();
+        Debug.Log("Update 1");
+        // Debug.Log(currentTime - previousTime);
+
         float ratio = (float)frontCam.width / (float)frontCam.height;
         fit.aspectRatio = ratio;
 
@@ -81,7 +113,13 @@ public class PhoneCamera : MonoBehaviour
         background.rectTransform.localScale = new Vector3(1f, scaleY, 1f);
         int orient = -frontCam.videoRotationAngle;
         background.rectTransform.localEulerAngles = new Vector3(0, 0, orient);
-        
+
+        now = DateTimeOffset.UtcNow;
+        previousTime = currentTime;
+        currentTime = now.ToUnixTimeMilliseconds();
+        Debug.Log("Update 2");
+        Debug.Log(currentTime - previousTime);
+
         Texture2D texture = new Texture2D(frontCam.width, frontCam.height, TextureFormat.RGBA32, false);
         Color[] textureData = frontCam.GetPixels();
         texture.SetPixels(textureData);
@@ -97,6 +135,12 @@ public class PhoneCamera : MonoBehaviour
         {
 
         }
+
+        now = DateTimeOffset.UtcNow;
+        previousTime = currentTime;
+        currentTime = now.ToUnixTimeMilliseconds();
+        Debug.Log("Update 3");
+        Debug.Log(currentTime - previousTime);
 
         OpenCVForUnity.CoreModule.Rect[] faces = matOfRectFaces.toArray();
 
@@ -116,9 +160,14 @@ public class PhoneCamera : MonoBehaviour
             Mat resizedGrayFace = new Mat();
             Imgproc.cvtColor(new Mat(frame, face), resizedGrayFace, Imgproc.COLOR_BGR2GRAY);
             Imgproc.resize(resizedGrayFace, resizedGrayFace, new Size(inputSize, inputSize), 0, 0, Imgproc.INTER_AREA);
-            Texture2D resizedGrayFaceTexture = new Texture2D(inputSize, inputSize, TextureFormat.RGB24, false);
-            // Texture2D resizedGrayFaceTexture = new Texture2D(inputSize, inputSize, TextureFormat.Alpha8, false);
+            Texture2D resizedGrayFaceTexture = new Texture2D(inputSize, inputSize, TextureFormat.Alpha8, false);
             Utils.matToTexture2D(resizedGrayFace, resizedGrayFaceTexture);
+
+            now = DateTimeOffset.UtcNow;
+            previousTime = currentTime;
+            currentTime = now.ToUnixTimeMilliseconds();
+            Debug.Log("Update 4");
+            Debug.Log(currentTime - previousTime);
 
             Tensor tensor = new Tensor(resizedGrayFaceTexture);
             if (worker == null) return;
@@ -155,6 +204,12 @@ public class PhoneCamera : MonoBehaviour
                     break;
             }
             output.Dispose();
+
+            now = DateTimeOffset.UtcNow;
+            previousTime = currentTime;
+            currentTime = now.ToUnixTimeMilliseconds();
+            Debug.Log("Update 5");
+            Debug.Log(currentTime - previousTime);
         }
     }
 

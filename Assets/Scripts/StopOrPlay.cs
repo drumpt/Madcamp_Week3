@@ -41,7 +41,7 @@ public class StopOrPlay : MonoBehaviour
             beatScroller.StopScroll();
             exitToMenu.ExitActive();
             gameManager.theMusic.Pause();
-
+            gameManager.sw.Stop();
         }
         else if(image.sprite.name == play.name)
         {
@@ -52,7 +52,7 @@ public class StopOrPlay : MonoBehaviour
             beatScroller.PlayScroll();
             exitToMenu.ExitInactive();
             gameManager.theMusic.Play();
-
+            gameManager.sw.Start();
         }
     }
 }
