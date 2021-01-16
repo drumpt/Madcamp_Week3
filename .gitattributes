@@ -1,3 +1,7 @@
 Assets/OpenCVForUnity/Extra.unitypackage filter=lfs diff=lfs merge=lfs -text
 Assets/OpenCVForUnity/Plugins/iOS/libopencvforunity.a filter=lfs diff=lfs merge=lfs -text
 Assets/OpenCVForUnity/Plugins/iOS/opencv2.framework/opencv2 filter=lfs diff=lfs merge=lfs -text
+Library/PlayerDataCache/OSXUniversal/Data/resources.assets filter=lfs diff=lfs merge=lfs -text
+Assets/OpenCVForUnity/Plugins/Windows/x86_64/opencvforunity.dll filter=lfs diff=lfs merge=lfs -text
+Assets/OpenCVForUnity/Plugins/WebGL/2019.1/opencvforunity.bc filter=lfs diff=lfs merge=lfs -text
+Assets/OpenCVForUnity/Plugins/WebGL/2018.2/opencvforunity.bc filter=lfs diff=lfs merge=lfs -text
