@@ -1,4 +1,0 @@
-#Thu Jan 14 05:47:45 KST 2021
-base.0=/Users/changhunkim/Downloads/Hobby/Madcamp_Week3/Temp/gradleOut/launcher/build/intermediates/transforms/dexMerger/release/0
-path.0=classes.dex
-renamed.0=classes.dex
