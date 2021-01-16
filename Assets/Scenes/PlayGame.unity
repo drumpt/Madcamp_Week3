@@ -4326,6 +4326,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   background: {fileID: 1872556777}
   fit: {fileID: 1872556776}
+  cascadeClassifierPath: Assets/Resources/haarcascade_frontalface_default.xml
+  modelSourcePath: facial_expression_model_sad_neutral_enhenced
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0

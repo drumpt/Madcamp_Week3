@@ -468,12 +468,12 @@ MonoBehaviour:
     enjoy the game!
 
 
-    [Developers]
+    Developers
 
-    Changhun Kim (KAIST 17)
+    - Changhun Kim (KAIST 17)
 
-    Mingu Hyeon
-    (DGIST 16)'
+    - Mingu
+    Hyun (DGIST 16)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -542,10 +542,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 501849336}
-    characterCount: 377
+    characterCount: 378
     spriteCount: 0
-    spaceCount: 59
-    wordCount: 56
+    spaceCount: 61
+    wordCount: 58
     linkCount: 0
     lineCount: 18
     pageCount: 1
